@@ -18,6 +18,7 @@ import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
 import { AdminModule } from './admin/admin.module';
 import { ThrottlerAutoModule } from './common/throttler-auto.module';
+import { PosterModule } from './poster/poster.module';
 
 @Module({
   imports: [
@@ -46,6 +47,7 @@ import { ThrottlerAutoModule } from './common/throttler-auto.module';
     AppStateModule,
     MailModule,
     AdminModule,
+    PosterModule,
   ],
   controllers: [AppController],
   providers: [AppService], // ← без APP_GUARD!
