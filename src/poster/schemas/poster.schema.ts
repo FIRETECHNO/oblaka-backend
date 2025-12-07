@@ -10,6 +10,12 @@ export class PosterClass {
     default: [],
   })
   images: string[];
+
+  @Prop({
+    type: String,
+    default: "",
+  })
+  markdownText: string
 }
 
 export const PosterSchema = SchemaFactory.createForClass(PosterClass);
