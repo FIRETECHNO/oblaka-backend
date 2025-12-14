@@ -1,4 +1,4 @@
-import { Controller, Post, Body, Get } from '@nestjs/common';
+import { Controller, Post, Body, Get, Query } from '@nestjs/common';
 import { PosterService } from './poster.service';
 import { IPoster } from './interfaces/IPoster.interface';
 
@@ -20,5 +20,24 @@ export class PosterController {
     @Body("poster") poster: IPoster
   ) {
     return await this.posterService.createPoster(poster)
+  }
+
+  @Get("all")
+  async getPosters(
+  ) {
+    return await this.posterService.getPosters()
+  }
+  @Get("by-id")
+  async getPosterById(
+    @Query("_id") _id: string
+  ) {
+    return await this.posterService.getPosterById(_id)
+  }
+  @Post("edit")
+  async edit(
+    @Body("poster") poster: IPoster,
+    @Body("_id") _id: string
+  ) {
+    return await this.posterService.edit(poster, _id)
   }
 }

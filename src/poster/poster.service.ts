@@ -16,4 +16,14 @@ export class PosterService {
   async createPoster(poster: IPoster): Promise<PosterDocument> {
     return await this.PosterModel.create(poster)
   }
+  async getPosters(): Promise<PosterDocument[]> {
+    return await this.PosterModel.find({})
+  }
+  async getPosterById(_id: string): Promise<PosterDocument> {
+    return await this.PosterModel.findOne({ _id: _id })
+  }
+  async edit(poster: IPoster, _id: string): Promise<any> {
+    console.log(poster)
+    return await this.PosterModel.updateOne({ _id: _id }, { images: poster.images, markdownText: poster.markdownText })
+  }
 }
