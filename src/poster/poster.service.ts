@@ -23,6 +23,6 @@ export class PosterService {
     return await this.PosterModel.findOne({ _id: _id })
   }
   async edit(poster: IPoster, _id: string): Promise<any> {
-    return await this.PosterModel.updateOne({ _id: _id }, { images: poster.images, markdownText: poster.markdownText })
+    return await this.PosterModel.updateOne({ _id: _id }, { images: poster.images, markdownText: poster.markdownText, eventDate: poster.eventDate })
   }
 }

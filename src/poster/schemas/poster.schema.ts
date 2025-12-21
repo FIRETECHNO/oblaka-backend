@@ -16,6 +16,12 @@ export class PosterClass {
     default: "",
   })
   markdownText: string
+
+  @Prop({
+    type: String,
+    default: "",
+  })
+  eventDate: string
 }
 
 export const PosterSchema = SchemaFactory.createForClass(PosterClass);
