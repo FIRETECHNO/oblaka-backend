@@ -19,6 +19,7 @@ import { join } from 'path';
 import { AdminModule } from './admin/admin.module';
 import { ThrottlerAutoModule } from './common/throttler-auto.module';
 import { PosterModule } from './poster/poster.module';
+import { TelegramModule } from './telegram/telegram.module';
 
 @Module({
   imports: [
@@ -48,6 +49,7 @@ import { PosterModule } from './poster/poster.module';
     MailModule,
     AdminModule,
     PosterModule,
+    TelegramModule,
   ],
   controllers: [AppController],
   providers: [AppService], // ← без APP_GUARD!
