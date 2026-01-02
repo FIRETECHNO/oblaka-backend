@@ -45,14 +45,14 @@ export class TelegramService {
     if (data?.eventType) {
       return `
       <b>Заявка на проведение мероприятия</b>\n
-<b>Гость: </b> ${data.name}
+<b>Имя гостя: </b> ${data.name}
 <b>Телефон: </b> ${phone}
 <b>Дата: </b> ${data.date}
 <b>Тип мероприятия: </b> ${data.eventType}`
     }
     return `
       <b>Новое бронирование столика</b>\n
-<b>Гость: </b> ${data.name}
+<b>Имя гостя: </b> ${data.name}
 <b>Телефон: </b> ${phone}
 <b>Дата: </b> ${data.date}`
   }
