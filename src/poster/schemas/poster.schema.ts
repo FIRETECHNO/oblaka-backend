@@ -3,7 +3,7 @@ import mongoose, { HydratedDocument } from 'mongoose';
 
 export type PosterDocument = HydratedDocument<PosterClass>;
 
-@Schema()
+@Schema({ timestamps: true })
 export class PosterClass {
   @Prop({
     type: Array,
@@ -18,10 +18,10 @@ export class PosterClass {
   markdownText: string
 
   @Prop({
-    type: String,
+    type: Date,
     default: "",
   })
-  eventDate: string
+  eventDate: Date
 }
 
 export const PosterSchema = SchemaFactory.createForClass(PosterClass);

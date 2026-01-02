@@ -25,4 +25,17 @@ export class PosterService {
   async edit(poster: IPoster, _id: string): Promise<any> {
     return await this.PosterModel.updateOne({ _id: _id }, { images: poster.images, markdownText: poster.markdownText, eventDate: poster.eventDate })
   }
+
+  async deletePoster(_id: string): Promise<any> {
+    return await this.PosterModel.deleteOne({ _id })
+  }
+
+
+  async getLastPosters(limit: number): Promise<PosterDocument[]> {
+    return await this.PosterModel
+      .find()
+      .sort({ createdAt: -1 }) // newest first
+      .limit(limit)
+      .exec();
+  }
 }
