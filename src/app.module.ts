@@ -20,6 +20,7 @@ import { AdminModule } from './admin/admin.module';
 import { ThrottlerAutoModule } from './common/throttler-auto.module';
 import { PosterModule } from './poster/poster.module';
 import { TelegramModule } from './telegram/telegram.module';
+import { AlbumModule } from './album/album.module';
 
 @Module({
   imports: [
@@ -50,6 +51,7 @@ import { TelegramModule } from './telegram/telegram.module';
     AdminModule,
     PosterModule,
     TelegramModule,
+    AlbumModule,
   ],
   controllers: [AppController],
   providers: [AppService], // ← без APP_GUARD!
