@@ -27,7 +27,7 @@ export class AdminAuthGuard implements CanActivate {
 
     // с помощью access token'а получаем _id пользователя 
     let userData = this.tokenService.validateAccessToken(accessToken);
-    if (userData._id) {
+    if (userData?._id) {
       let user = await this.UserModel.findById(userData._id)
       // если роль нашлась, то пускаем пользователя
       return user.roles.indexOf('admin') != -1
