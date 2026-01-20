@@ -1,5 +1,5 @@
 import { Controller, Post, Body, Get, Query, UseGuards } from '@nestjs/common';
-import { AlbumService } from './album.service'; 
+import { AlbumService } from './album.service';
 import { IAlbum } from './interfaces/IAlbum.interface';
 
 import { AdminAuthGuard } from 'src/auth/admin.guard';
@@ -26,7 +26,7 @@ export class AlbumController {
   }
 
   @Get("all")
-  @UseGuards(AdminAuthGuard)
+  // @UseGuards(AdminAuthGuard)
   async getAlbums(
   ) {
     return await this.AlbumService.getAlbums()
