@@ -18,6 +18,12 @@ export class PosterClass {
   markdownText: string
 
   @Prop({
+    type: String,
+    required: false,
+  })
+  qticketsUrl: string
+
+  @Prop({
     type: Date,
     default: "",
   })
